@@ -1,3 +1,7 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.poetry]
 name = "headjack"
 version = "0.1.0"
@@ -7,7 +11,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-lmql = "0.0.4.2"
+lmql = ">= 0.0.4.2"
+chromadb = "0.3.21"
+fastapi = ">= 0.71.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "7.2.2"
@@ -15,6 +21,13 @@ pytest-checkdocs = "2.9.0"
 pre-commit = "3.2.1"
 coverage = "^7.2.3"
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.black]
+line-length = 130
+
+[tool.flake8]
+max-line-length = 130
+
+[tool.isort]
+profile = "black"
+line_length = 130
+skip_gitignore = true
