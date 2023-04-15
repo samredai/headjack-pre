@@ -6,6 +6,13 @@ Headjack is a chat-based semantic layer for metrics platforms.
 
 The included docker compose setup launches a headjack, [chroma](https://github.com/chroma-core/chroma), and jupyter lab container.
 
+Pull down the chroma repo which is contained in this repo as a submodule.
+```sh
+git submodule init
+git submodule update
+```
+
+Start the docker compose environment.
 ```sh
 docker compose up
 ```
