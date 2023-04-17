@@ -4,9 +4,9 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "headjack"
-version = "0.1.0"
+version = "0.0.1a1"
 description = ""
-authors = ["Nick Ouellet <35903677+CircArgs@users.noreply.github.com>>"]
+authors = ["Nick Ouellet <nicholas.p.ouellet@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
