@@ -17,8 +17,8 @@ Start the docker compose environment.
 docker compose up
 ```
 
-Headjack: [http://localhost:16400/docs](http://localhost:16400/docs)  
-Juptyer Lab: [http://localhost:16401](http://localhost:16401)  
+Headjack: [http://localhost:16400/docs](http://localhost:16400/docs)
+Juptyer Lab: [http://localhost:16401](http://localhost:16401)
 ChromaDB: [http://localhost:16402/docs](http://localhost:16402/docs)
 
 # Lint, Test, and Check Coverage
