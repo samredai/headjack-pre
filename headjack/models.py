@@ -9,7 +9,7 @@ class BatchEmbeddings(BaseModel):
     metadatas: List[Dict[str, str]]
 
 
-class NodeDocument(BaseModel):
+class Document(BaseModel):
     name: str
     description: str
     metadata: Optional[Dict[str, str]]
@@ -25,19 +25,6 @@ class NodeDocument(BaseModel):
         return embeddings
 
 
-class KnowledgeDocument(BaseModel):
-    name: str
-    description: str
+class KnowledgeDocument(Document):
     content: str
     url: str
-    metadata: Optional[Dict[str, str]]
-
-    def generate_embeddings(self) -> BatchEmbeddings:
-
-        # Add logic here to chunk up the content
-        embeddings = BatchEmbeddings(
-            ids=["foo"],
-            documents=["placeholder sentence"],
-            metadatas=[{"knowledge_document": "foo"}],
-        )
-        return embeddings

@@ -3,7 +3,7 @@ Module containing all config related things
 """
 import chromadb
 from chromadb.config import Settings
-
+from chromadb.api.models.Collection import Collection
 
 def get_chroma_client():  # pragma: no cover
     """
@@ -19,7 +19,7 @@ def get_chroma_client():  # pragma: no cover
     return chroma_client
 
 
-def get_headjack_collection():  # pragma: no cover
+def get_headjack_collection()->Collection:  # pragma: no cover
     """
     Get the headjack collection
     """

@@ -4,7 +4,8 @@ Headjack web server
 import logging
 
 from chromadb.api.local import LocalAPI
-from chromadb.api.models import Collection
+from chromadb.api.models.Collection import Collection
+from chromadb.api.types import GetResult
 from fastapi import Depends, FastAPI
 from fastapi.responses import JSONResponse
 
@@ -37,7 +38,7 @@ async def add_node_embeddings(
 @app.get("/nodes/{node_name}/")
 async def get_node_embeddings(
     node_name: str, *, headjack_collection: Collection = Depends(get_headjack_collection)
-) -> JSONResponse:
+) -> GetResult:
     """
     Get stored embeddings for a node
     """
@@ -60,7 +61,7 @@ async def add_knowledge_embeddings(
 @app.get("/knowledge/{knowledge_name}/")
 async def get_knowledge_embeddings(
     knowledge_name: str, *, headjack_collection: Collection = Depends(get_headjack_collection)
-) -> JSONResponse:
+) -> GetResult:
     """
     Get stored embeddings for a knowledge document
     """
