@@ -72,4 +72,42 @@
 - "What are some metrics related to website personalization?"
     - Metrics: "website personalization", "personalization rate", "click-through rate", "conversion rate"
 
-I hope this format is helpful! Let me know if you have any other questions.
+- "What is the average revenue per customer by region for the year 2022?"
+    - Metrics: "average revenue per customer", "ARPC"
+    - Dimensions: "region", "year"
+
+- "What is the total sales by product category for the quarter ending September 2023?"
+    - Metrics: "total sales", "sales", "revenue"
+    - Dimensions: "product category", "quarter", "time period"
+
+- "What is the average age of male and female customers by country for the year 2022?"
+    - Metrics: "average age", "mean age"
+    - Dimensions: "gender", "country", "year"
+
+- "What is the total profit by product category for the year 2022?"
+    - Metrics: "total profit", "profit", "earnings"
+    - Dimensions: "product category", "year"
+
+- "What is the average rating by genre for the top 10 movies of all time?"
+    - Metrics: "average rating", "mean rating"
+    - Dimensions: "genre", "movies", "top 10"
+
+- "What is the average salary by job title for the year 2022?"
+    - Metrics: "average salary", "mean salary"
+    - Dimensions: "job title", "year"
+
+- "What is the average time spent on the website by age group?"
+    - Metrics: "average time spent", "mean time spent"
+    - Dimensions: "age group"
+
+- "What is the average temperature by city for the month of July?"
+    - Metrics: "average temperature", "mean temperature"
+    - Dimensions: "city", "month"
+
+- "What is the total number of website visitors by traffic source for the month of June?"
+    - Metrics: "total number", "number of visitors", "website visitors"
+    - Dimensions: "traffic source", "month"
+
+- "What is the average score by team for the season?"
+    - Metrics: "average score", "mean score"
+    - Dimensions: "team", "season"
