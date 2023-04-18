@@ -12,7 +12,7 @@ def test_create_and_then_get_a_node_embedding(client):
     node = NodeDocument(**{"name": "foo", "description": "This is a description of node foo."})
     client.post("/nodes/", json=node.dict())
     response = client.get("nodes/foo/")
-    assert response.ok
+    assert response.status_code == 200
     assert response.json() == {
         "ids": ["foo"],
         "embeddings": None,
@@ -32,7 +32,7 @@ def test_create_and_then_get_a_knowledge_embedding(client):
     )
     client.post("/knowledge/", json=knowledge.dict())
     response = client.get("knowledge/foo/")
-    assert response.ok
+    assert response.status_code == 200
     assert response.json() == {
         "ids": ["foo"],
         "embeddings": None,
