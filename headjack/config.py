@@ -9,11 +9,20 @@ def get_chroma_client():  # pragma: no cover
     """
     Get a chromadb client
     """
-    with chromadb.Client(
+    chroma_client = chromadb.Client(
         Settings(
             chroma_api_impl="rest",
             chroma_server_host="chromadb",
             chroma_server_http_port="16402",
         ),
-    ) as chroma_client:
-        yield chroma_client
+    )
+    return chroma_client
+
+
+def get_headjack_collection():  # pragma: no cover
+    """
+    Get the headjack collection
+    """
+    chroma_client = get_chroma_client()
+    collection = chroma_client.get_or_create_collection("knowledge")
+    return collection
