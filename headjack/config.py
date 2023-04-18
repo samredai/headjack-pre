@@ -17,3 +17,11 @@ def get_chroma_client():  # pragma: no cover
         ),
     )
     return chroma_client
+
+def get_headjack_collection():  # pragma: no cover
+    """
+    Get the headjack collection
+    """
+    chroma_client = get_chroma_client()
+    collection = chroma_client.get_or_create_collection("knowledge")
+    return collection
