@@ -1,4 +1,4 @@
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 from pydantic import BaseModel
 
@@ -12,14 +12,15 @@ class BatchEmbeddings(BaseModel):
 class NodeDocument(BaseModel):
     name: str
     description: str
+    metadata: Optional[Dict[str, str]]
 
     def generate_embeddings(self) -> BatchEmbeddings:
 
         # Add logic here to chunk up the content
         embeddings = BatchEmbeddings(
-            ids=[],
-            documents=[],
-            metadatas=[],
+            ids=["foo"],
+            documents=["placeholder sentence"],
+            metadatas=[{"node_document": "foo"}],
         )
         return embeddings
 
@@ -29,14 +30,14 @@ class KnowledgeDocument(BaseModel):
     description: str
     content: str
     url: str
-    metadata: Dict[str, str]
+    metadata: Optional[Dict[str, str]]
 
     def generate_embeddings(self) -> BatchEmbeddings:
 
         # Add logic here to chunk up the content
         embeddings = BatchEmbeddings(
-            ids=[],
-            documents=[],
-            metadatas=[],
+            ids=["foo"],
+            documents=["placeholder sentence"],
+            metadatas=[{"knowledge_document": "foo"}],
         )
         return embeddings

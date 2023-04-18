@@ -23,7 +23,9 @@ async def health_check(*, chroma_client: LocalAPI = Depends(get_chroma_client)):
 
 
 @app.post("/nodes/")
-async def add_node_embeddings(node: NodeDocument, *, headjack_collection: Collection = Depends(get_headjack_collection)) -> JSONResponse:
+async def add_node_embeddings(
+    node: NodeDocument, *, headjack_collection: Collection = Depends(get_headjack_collection)
+) -> JSONResponse:
     """
     Generate and store node embeddings
     """
@@ -33,7 +35,9 @@ async def add_node_embeddings(node: NodeDocument, *, headjack_collection: Collec
 
 
 @app.get("/nodes/{node_name}/")
-async def get_node_embeddings(node_name: str, *, headjack_collection: Collection = Depends(get_headjack_collection)) -> JSONResponse:
+async def get_node_embeddings(
+    node_name: str, *, headjack_collection: Collection = Depends(get_headjack_collection)
+) -> JSONResponse:
     """
     Get stored embeddings for a node
     """
@@ -54,7 +58,9 @@ async def add_knowledge_embeddings(
 
 
 @app.get("/knowledge/{knowledge_name}/")
-async def get_knowledge_embeddings(knowledge_name: str, *, headjack_collection: Collection = Depends(get_headjack_collection)) -> JSONResponse:
+async def get_knowledge_embeddings(
+    knowledge_name: str, *, headjack_collection: Collection = Depends(get_headjack_collection)
+) -> JSONResponse:
     """
     Get stored embeddings for a knowledge document
     """
