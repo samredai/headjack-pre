@@ -1,7 +1,7 @@
 """
 Tests for app.py
 """
-from headjack.models import KnowledgeDocument, NodeDocument
+from headjack.models import Document, KnowledgeDocument
 
 
 def test_healthcheck(client):
@@ -9,7 +9,7 @@ def test_healthcheck(client):
 
 
 def test_create_and_then_get_a_node_embedding(client):
-    node = NodeDocument(**{"name": "foo", "description": "This is a description of node foo."})
+    node = Document(**{"name": "foo", "description": "This is a description of node foo."})
     client.post("/nodes/", json=node.dict())
     response = client.get("nodes/foo/")
     assert response.status_code == 200

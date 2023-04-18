@@ -10,7 +10,7 @@ from fastapi import Depends, FastAPI
 from fastapi.responses import JSONResponse
 
 from headjack.config import get_chroma_client, get_headjack_collection
-from headjack.models import KnowledgeDocument, NodeDocument
+from headjack.models import Document, KnowledgeDocument
 
 _logger = logging.getLogger(__name__)
 
@@ -25,7 +25,7 @@ async def health_check(*, chroma_client: LocalAPI = Depends(get_chroma_client)):
 
 @app.post("/nodes/")
 async def add_node_embeddings(
-    node: NodeDocument, *, headjack_collection: Collection = Depends(get_headjack_collection)
+    node: Document, *, headjack_collection: Collection = Depends(get_headjack_collection)
 ) -> JSONResponse:
     """
     Generate and store node embeddings
@@ -36,9 +36,7 @@ async def add_node_embeddings(
 
 
 @app.get("/nodes/{node_name}/")
-async def get_node_embeddings(
-    node_name: str, *, headjack_collection: Collection = Depends(get_headjack_collection)
-) -> GetResult:
+async def get_node_embeddings(node_name: str, *, headjack_collection: Collection = Depends(get_headjack_collection)) -> GetResult:
     """
     Get stored embeddings for a node
     """
