@@ -14,6 +14,7 @@ services:
       - DOTENV_FILE=.env
     volumes:
       - .:/code
+    command: uvicorn headjack.api.app:app --host 0.0.0.0 --port 16400 --reload
     ports:
       - "16400:16400"
     depends_on:
@@ -46,6 +47,26 @@ services:
       - PERSIST_DIRECTORY=/index_data
     ports:
       - 16402:16402
+    networks:
+      - headjack-network
+
+  create-collectionss:
+    container_name: create-collections
+    image: curlimages/curl
+    command: >-
+      curl
+      -X POST
+      --data '{"name": "nodes", "metadata": {}, "get_or_create": true}'
+      -H "Content-Type: application/json"
+      -H "Accept: application/json"
+      http://chromadb:16402/api/v1/collections &&
+      curl
+      -X POST
+      --data '{"name": "knowledge", "metadata": {}, "get_or_create": true}'
+      -H "Content-Type: application/json"
+      -H "Accept: application/json"
+      http://chromadb:16402/api/v1/collections
+    restart: on-failure
     networks:
       - headjack-network
 
