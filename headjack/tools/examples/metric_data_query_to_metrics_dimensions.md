@@ -1,25 +1,25 @@
 # Some examples of queries and their respective metrics and dimensions:
 
-- "What is the average temperature by city for the month of July?" 
+- "What is the average temperature by city for the month of July?"
     - Metrics: "average temperature", "mean temperature"
     - Dimensions: "city", "month"
-    
+
 - "What is the total sales by region for the quarter ending September 2023?"
     - Metrics: "total sales", "sales", "revenue"
     - Dimensions: "region", "quarter", "time period"
-    
+
 - "What is the average salary by job title for the year 2022?"
     - Metrics: "average salary", "mean salary"
     - Dimensions: "job title", "year"
-    
+
 - "What is the total profit by product category for the year 2022?"
     - Metrics: "total profit", "profit", "earnings"
     - Dimensions: "product category", "category", "year"
-    
+
 - "What is the average rating by genre for the top 10 movies of all time?"
     - Metrics: "average rating", "mean rating"
     - Dimensions: "genre", "movies", "top 10"
-    
+
 - "What is the total number of website visitors for the month of June?"
     - Metrics: "total number", "number of visitors", "website visitors"
     - Dimensions: "month"

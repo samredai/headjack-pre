@@ -21,7 +21,7 @@ services:
       - chromadb
 
   jupyter-notebook:
-    container_name: jupyter
+    container_name: headjack-jupyter
     image: jupyter/scipy-notebook
     networks:
       - headjack-network
