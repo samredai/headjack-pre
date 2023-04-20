@@ -21,12 +21,12 @@ services:
       - chromadb
 
   jupyter-notebook:
-    container_name: headjack-jupyter
+    container_name: jupyter-headjack
     image: jupyter/scipy-notebook
     networks:
       - headjack-network
     ports:
-      - "16401:8888"
+      - "8888:8888"
     volumes:
       - ./notebooks:/home/jovyan/notebooks
     environment:
