@@ -7,7 +7,7 @@ import lmql
 from dataclasses import dataclass
 
 from lmql.utils.nputil import topk
-from headjack.models import Document, Tool, Observation, Utterance
+from headjack_server.models import Document, Tool, Observation, Utterance
 
 async def metric_search(
     query: str,

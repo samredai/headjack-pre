@@ -9,8 +9,8 @@ from chromadb.api.types import GetResult
 from fastapi import Depends, FastAPI
 from fastapi.responses import JSONResponse
 
-from headjack.config import get_chroma_client, get_headjack_collection
-from headjack.models import Document, KnowledgeDocument
+from headjack_server.config import get_chroma_client, get_headjack_collection
+from headjack_server.models import Document, KnowledgeDocument
 
 _logger = logging.getLogger(__name__)
 
