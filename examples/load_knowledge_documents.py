@@ -1,6 +1,6 @@
-import headjack
+import headjack_server
 
-hj = headjack.client()
+hj = headjack_server.client()
 
 hj.send(
     name="repair_orders",

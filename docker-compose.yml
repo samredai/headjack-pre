@@ -7,28 +7,32 @@ networks:
 services:
   headjack:
     container_name: headjack
-    build: .
+    build:
+      context: ./
+      dockerfile: ./.docker/headjack.dockerfile
     networks:
       - headjack-network
     environment:
       - DOTENV_FILE=.env
     volumes:
       - .:/code
-    command: uvicorn headjack.api.app:app --host 0.0.0.0 --port 16400 --reload
+    command: uvicorn headjack_server.api.app:app --host 0.0.0.0 --port 16400 --reload
     ports:
       - "16400:16400"
     depends_on:
       - chromadb
 
-  jupyter-notebook:
+  jupyter-headjack:
     container_name: jupyter-headjack
-    image: jupyter/scipy-notebook
+    build:
+      context: ./
+      dockerfile: ./.docker/jupyter-headjack.dockerfile
     networks:
       - headjack-network
     ports:
-      - "8888:8888"
+      - "16401:8888"
     volumes:
-      - ./notebooks:/home/jovyan/notebooks
+      - .:/code
     environment:
       JUPYTER_ENABLE_LAB: "yes"
     command: "start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''"

@@ -9,8 +9,8 @@ An agent that can answer basic questions
 """
 import asyncio
 from typing import List, AsyncGenerator, Optional
-from headjack.models import Tool, Agent, Utterance, Thought, Answer
-from headjack.tools.metric_search import MetricSearchTool
+from headjack_server.models import Tool, Agent, Utterance, Thought, Answer
+from headjack_server.tools.metric_search import MetricSearchTool
 import lmql
 
 
@@ -63,7 +63,7 @@ class BasicQAAgent(Agent):
     
         
 async def main():
-    from headjack.models import cli_agent_input
+    from headjack_server.models import cli_agent_input
     model = ''
     agent = BasicQAAgent([MetricSearchTool(model, "Tool to search for metric knowledge.", "metric_knowledge", nodes = False),
                           MetricSearchTool(model, "Tool to search for metric nodes.", "metric_nodes", knowledge = False)])

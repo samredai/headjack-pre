@@ -4,7 +4,7 @@ Models used across headjack
 
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Any, ClassVar, Dict, List, Optional, Protocol, Tuple, Type, Optional, TypeVar, Callable, AsyncGenerator
+from typing import Any, ClassVar, Dict, Generator, List, Optional, Protocol, Tuple, Type, Optional, TypeVar, Callable, AsyncGenerator
 from uuid import UUID, uuid4
 
 from pydantic import BaseModel, Field
@@ -57,12 +57,12 @@ class Utterance:
     def __str__(self):
         return self.marker + self.utterance
     
-    def history(self, n: Optional[int] = None):
+    def history(self, n: Optional[int] = None) -> Generator:
         n_ = n or float('inf')
         curr = self
         while n_>0 and curr is not None:
             yield curr
-            curr = self.parent
+            curr = self.parent  # type: ignore
             n_-=1
     
     @property
