@@ -7,6 +7,7 @@ networks:
 services:
   headjack:
     container_name: headjack
+    profiles: ["server"]
     build:
       context: ./
       dockerfile: ./.docker/headjack.dockerfile
@@ -24,6 +25,7 @@ services:
 
   jupyter-headjack:
     container_name: jupyter-headjack
+    profiles: ["notebook"]
     build:
       context: ./
       dockerfile: ./.docker/jupyter-headjack.dockerfile
@@ -39,6 +41,7 @@ services:
 
   chromadb:
     container_name: chromadb
+    profiles: ["server", "notebook"]
     build:
       context: ./docker/chroma
       dockerfile: Dockerfile
@@ -56,6 +59,7 @@ services:
 
   create-collectionss:
     container_name: create-collections
+    profiles: ["server", "notebook"]
     image: curlimages/curl
     command: >-
       curl
