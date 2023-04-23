@@ -1,17 +1,14 @@
 ---
-weight: 3
+weight: 1
 title: "An Example Post"
-date: 2023-04-20T00:00:00+00:00
-lastmod: 2023-04-20T00:00:00+00:00
+date: 2023-01-01T00:00:00+00:00
+lastmod: 2023-01-01T00:00:00+00:00
 draft: false
 authors: ["Headjack Devs"]
 description: ""
 featuredImage: ""
-
-tags: ["tutorial"]
+tags: ["tutorial", "client"]
 categories: ["posts"]
-series: ["getting-started"]
-series_weight: 3
 lightgallery: true
 ---
 
