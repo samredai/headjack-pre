@@ -9,14 +9,6 @@
   title = ""
   weight = 1
 [[main]]
-  identifier = "concepts"
-  pre = ""
-  post = ""
-  name = "Concepts"
-  url = "/categories/concepts/"
-  title = ""
-  weight = 2
-[[main]]
   identifier = "tags"
   pre = ""
   post = ""

@@ -1,5 +1,5 @@
 ---
-title: Embeddings
+title: Embeddings and Vector Datastores
 tags: ["docs"]
 categories: ["concepts"]
 ---
