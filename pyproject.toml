@@ -12,6 +12,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 lmql = ">= 0.0.4.2"
+langchain = ">= 0.0.147"
 chromadb = "0.3.21"
 fastapi = ">= 0.71.0"
 
