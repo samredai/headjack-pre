@@ -82,15 +82,8 @@ async def chat(websocket: WebSocket):
         try:
             while True:
                 data = await websocket.receive_json()
-                task = asyncio.create_task(ping(websocket))
                 await manager.broadcast(data)
         except WebSocketDisconnect:
             manager.disconnect(websocket, sender)
             response['message'] = "left"
             await manager.broadcast(response)
-    
-async def ping(websocket):
-    while True:
-        await websocket.send('{"message":"PING"}')
-        print('------ ping')
-        await asyncio.sleep(0.1)
